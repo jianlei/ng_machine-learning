@@ -35,8 +35,11 @@ fprintf('Loading data ...\n');
 
 %% Load Data
 data = load('ex1data2.txt');
+%% 获取前两列数据 作为features
 X = data(:, 1:2);
+% 获取最后一列数据作为label
 y = data(:, 3);
+% 获取训练集长度
 m = length(y);
 
 % Print out some data points
@@ -49,8 +52,10 @@ pause;
 % Scale features and set them to zero mean
 fprintf('Normalizing Features ...\n');
 
+% 对feature进行特征缩放
 [X mu sigma] = featureNormalize(X);
 
+% 增加一列x0作为theta0的feather，方便后续矩阵计算
 % Add intercept term to X
 X = [ones(m, 1) X];
 
@@ -83,11 +88,15 @@ fprintf('-------[%.02f %.02f %.02f]',X)
 fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
+% learing rate
 alpha = 0.01;
+% 学习次数
 num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
+% 因为有三个特征，所以theta为3x1的向量
 theta = zeros(3, 1);
+% 进行梯度下降，计算theat
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph

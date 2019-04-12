@@ -13,7 +13,7 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
+% 通过theat计算j（theta）值，观察J（theta）变化查看梯度下降算法进行得如何
 
 J = 1/(2*m)*sum((X*theta - y) .^ 2);
 

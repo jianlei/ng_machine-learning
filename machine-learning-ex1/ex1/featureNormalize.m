@@ -32,6 +32,7 @@ fprintf('mu = [%.0f %.0f]',mu);
 sigma = std(X_norm);
 %X_norm(:,1) = (X(:,1)  - mu(1))/std(X(:,1));
 %X_norm(:,2) = (X(:,2)  - mu(2))/std(X(:,2));
+% 对所有特征进行缩放，在统一range范围
 X_norm = (X_norm .- mu)./sigma;
 
 fprintf('---------------------')
