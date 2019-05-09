@@ -16,6 +16,7 @@ if size(X, 2) <= 3
     % Only need 2 points to define a line, so choose two endpoints
     plot_x = [min(X(:,2))-2,  max(X(:,2))+2];
 
+    % theta(1)*x0+theat(2)*x1+theta(3)*x2 == 0这里是根据x1计算出x2 画决策边界线
     % Calculate the decision boundary line
     plot_y = (-1./theta(3)).*(theta(2).*plot_x + theta(1));
 

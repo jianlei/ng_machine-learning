@@ -31,14 +31,14 @@ grad(2:length(theta),:) = (X'*(sigmoid(X*theta)- y))(2:length(theta),:)/m + (lam
 %another implement method ======================================= 
 
 % 因为theta0 不正则化，所以我们可以假设theta0为0，在计算的是欧
-theta_0_0 = [0;theta(2:size(theta),:)];
-h_theta = sigmoid(X*theta);%用的是原始的theta
+%theta_0_0 = [0;theta(2:size(theta),:)];
+%h_theta = sigmoid(X*theta);%用的是原始的theta
 
-p = lambda*(theta_0_0'*theta_0_0)/(2*m); % 因为第一个为0 所以避免了把theta0计算进来
-J = ((-y)'*log(h) - (1-y)'*log(1-h))/m + p;
+%p = lambda*(theta_0_0'*theta_0_0)/(2*m); % 因为第一个为0 所以避免了把theta0计算进来
+%J = ((-y)'*log(h) - (1-y)'*log(1-h))/m + p;
 
 % calculate grads  其中lambda*theta1中，theta0为0 所以等于没有计算
-grad = (X'*(h - y)+lambda*theta1)/m;
+%grad = (X'*(h - y)+lambda*theta1)/m;
 %
 % 
 % =============================================================

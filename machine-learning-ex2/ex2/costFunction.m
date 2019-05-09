@@ -20,10 +20,12 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-J =  (-y'*log(sigmoid(X*theta))-(1-y)'*log(1-sigmoid(X*theta))) / m; % code to compute J(theta)
+h = sigmoid(X*theta);
+
+J =  (-y'*log(h)-(1-y)'*log(1-h)) / m; % code to compute J(theta)
 
 
-grad = (X' * (sigmoid(X*theta) - y))/m; % 算导数 使用矩阵
+grad = (X' * (h - y))/m; % 算导数 使用矩阵
 
 
 
